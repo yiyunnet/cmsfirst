@@ -5,4 +5,4 @@
  * Date: 2019/1/7
  * Time: 17:31
  */
-Route::any('','IndexController@index')->name('/');
+Route::any('login','PublicController@userLogin')->name('/login');
