@@ -36,8 +36,9 @@ class RouteServiceProvider extends ServiceProvider
     public function map()
     {
         $this->mapApiRoutes();
-
         $this->mapWebRoutes();
+        $this->mapFrontRoutes();
+        $this->mapBackendRoutes();
 
         //
     }
@@ -69,5 +70,21 @@ class RouteServiceProvider extends ServiceProvider
              ->middleware('api')
              ->namespace($this->namespace)
              ->group(base_path('routes/api.php'));
+    }
+
+    protected function mapFrontRoutes()
+    {
+        Route::prefix('')
+            ->middleware('web')
+            ->namespace($this->namespace . '\Front')
+            ->group(base_path('routes/front.php'));
+    }
+
+    protected function mapBackendRoutes()
+    {
+        Route::prefix('')
+            ->middleware(['web', 'backend:backend'])
+            ->namespace($this->namespace . '\Backend')
+            ->group(base_path('routes/backend.php'));
     }
 }

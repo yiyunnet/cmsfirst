@@ -6,3 +6,4 @@
  * Time: 17:29
  */
 Route::any('','IndexController@index')->name('/');
+Route::get('aclist','IndexController@getArticleList')->name('/aclist');

@@ -12,12 +12,15 @@ class IndexController  extends CommonController
 {
     public function __construct()
     {
-
          echo "Front!";
     }
 
     public function index(){
-        return 'ex Action!';
+        return 'Front Index Action!';
+    }
+    public function getArticleList(){
+        echo "List";
+
     }
 
 }
