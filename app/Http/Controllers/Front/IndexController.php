@@ -19,7 +19,8 @@ class IndexController  extends CommonController
         return 'Front Index Action!';
     }
     public function getArticleList(){
-        echo "List";
+
+        return view('front.index.index');
 
     }
 
